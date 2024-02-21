@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full min-h-screen bg-zinc-100 font-['gilroy']">
+        <div class="nav flex justify-between items-center px-5 py-5 relative">
+            <i class="text-lg ri-menu-2-line"></i>
+            <i class="carticon text-lg ri-shopping-bag-2-fill"></i>
+            <div class="cartexpnd hidden w-52 bg-zinc-100 rounded-lg absolute top-[80%] right-5 flex flex-col gap-2">
+
+            </div>
+        </div>
+     
+        <div class="input flex justify-between px-5 gap-2">
+            <input class="font-semibold capitalize px-4 py-3 rounded-lg w-full bg-zinc-200 outline-none" type="text"
+                placeholder="search">
+            <button class="px-4 py-3 text-white rounded-xl shader"><i class="ri-equalizer-fill"></i></button>
+        </div>
+
+        <div class="categories py-8 flex items-center gap-5 pl-5 whitespace-nowrap overflow-auto">
+            <div class="icon rounded-full px-6 shadow-xl shadow-black/40 py-5 shader text-yellow-400">
+                <i class="text-lg ri-home-2-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-scroll-to-bottom-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-store-2-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-bookmark-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-global-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-service-line"></i>
+            </div>
+            <div class="icon rounded-full shadow-md shadow-slate/10 px-5 py-4">
+                <i class="text-lg ri-home-2-fill"></i>
+            </div>
+        </div>
+
+        <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96" id="carouselWrapper">
+                <!-- Navigation buttons -->
+                <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full px-4 z-10">
+                    <button class="text-white rounded-full bg-black bg-opacity-50 p-3 focus:outline-none" id="prevButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button class="text-white rounded-full bg-black bg-opacity-50 p-3 focus:outline-none" id="nextButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Item 1 -->
+                <div class="duration-700 ease-in-out absolute inset-0" data-carousel-item="active">
+                    <img src="/images/slide1.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
+                    <img src="./images/slide2.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
+                    <img src="./images/slide3.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
+                    <img src="./images/slide4.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                </div>
+            </div>
+        </div>            
+        
+        <div class="Electronic mt-10 pb-5">
+            <h3 class="text-2xl pl-5 font-semibold">Best Electronic</h3>
+            <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                        <img src="./images/acemera.jpg" class="object-cover w-full h-full" alt="Image">
+                    </div>                    
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Mirrorless Cameras.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹70,456</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
+                        <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                            <img src="./images/laptop.jpg" class="object-cover w-full h-full" alt="Image">
+                        </div>  
+                    </div>
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Acer Laptop.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹34,456</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
+                        <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                            <img src="./images/boat.webp" class="object-cover w-full h-full" alt="Image">
+                        </div>  
+                    </div>
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Boat Watch.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹3000</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!--=============== PRODUCT ===============-->
+       <div class="product__container container grid bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-500">
+            <div class="txt text-2xl pl-5 font-semibold text-white">
+                <marquee behavior="left" direction="left">Today's HIGHLIGHTS.</marquee>
+            </div>
+            <div class="product__data Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full text-center pl-5">
+                <div class="product__info grid grid-cols-3 gap-2 mb-8">
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/wall docker.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs"> Wall..</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">JETAL ART</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹229</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/keyholder.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs">Xtenshion</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">Crafts Wooden</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹277</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/ryme-small size.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs"> Artificial</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">Plants, Home</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹170</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/shirt.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs">Surhi</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">Casual Shirt</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹500</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+                    
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/motorola.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs">MOTOROLA</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">Sea Green</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹6,999</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+
+                    <div class="product__box bg-white rounded-lg p-3">
+                        <img src="./images/kesh king.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <h3 class="product__title font-semibold text-xs">Kesh</h3>
+                        <span class="product__subtitle font-semibold text-xs opacity-20">Shampoo</span>
+                        <!-- Price and Buy -->
+                        <div class="flex justify-between mt-1">
+                            <span class="font-bold text-sm">₹436</span>
+                            <button class="w-5 h-5 rounded-full shader text-yellow-400">
+                                <i class="ri-add-line text-2xs"></i>
+                            </button>                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Electronic mt-5 pb-5">
+            <h3 class="text-2xl pl-5 font-semibold">Saree</h3>
+            <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                        <img src="./images/saree1.webp" class="object-cover w-full h-full" alt="Image">
+                    </div>  
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Bnarsi Silk.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹39,999</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                        <img src="./images/saree2.jpg" class="object-cover w-full h-full" alt="Image">
+                    </div>  
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Women's Pure Kanjivaram.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹10,999</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                        <img src="./images/saree3.jpg" class="object-cover w-full h-full" alt="Image">
+                    </div>  
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">lehenga saree.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹649</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="Electronic mt-10 pb-5 bg-gradient-to-r from-blue-800 via-indigo-600 to-purple-600">
+            <div class="txt text-2xl pl-5 font-semibold text-white">
+                <marquee behavior="left" direction="left">This tree has been purchased by 25,000 people and is currently popular in the market. If you like it, consider purchasing it soon.</marquee>
+            </div>            
+        
+            <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
+                <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+                        style="transform: scale(1.5); opacity: 0.1;">
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
+                            fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <div class="relative pt-10 px-10 flex items-center justify-center">
+                        <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
+                            style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
+                        </div>
+                        <img class="relative w-40"
+                            src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
+                            alt="">
+                    </div>
+                    <div class="relative text-white px-6 pb-6 mt-6">
+                        <span class="block opacity-75 -mb-1">Indoor</span>
+
+                        <div class="flex justify-between">
+                            <span class="block font-semibold text-xl">Peace Lily</span>
+                            <span class="mr-2"></span><!-- Adding space -->
+                            <div class="flex items-center">
+                                <div class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">-30% Off</div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="mr-2"></span><!-- Adding space -->
+                                <button class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center" type="button">&#8377;800</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+        
+                <div class="flex-shrink-0 m-6 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+                        style="transform: scale(1.5); opacity: 0.1;">
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
+                            fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <div class="relative pt-10 px-10 flex items-center justify-center">
+                        <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
+                            style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
+                        </div>
+                        <img class="relative w-40"
+                            src="https://user-images.githubusercontent.com/2805249/64069998-305de300-cc9a-11e9-8ae7-5a0fe00299f2.png"
+                            alt="">
+                    </div>
+                    <div class="relative text-white px-6 pb-6 mt-6">
+                        <span class="block opacity-75 -mb-1">Outdoor</span>
+                        <div class="flex justify-between">
+                            <span class="block font-semibold text-xl">Monstera</span>
+                            <span class="mr-2"></span><!-- Adding space -->
+                            <div class="flex items-center">
+                                <div class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">-70% Off</div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="mr-2"></span><!-- Adding space -->
+                                <button class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center" type="button">&#8377;200</button>
+                            </div>
+                        </div>   
+    
+                    </div>
+                </div>
+        
+                <div class="flex-shrink-0 m-6 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
+                    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+                        style="transform: scale(1.5); opacity: 0.1;">
+                        <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
+                            fill="white" />
+                        <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
+                    </svg>
+                    <div class="relative pt-10 px-10 flex items-center justify-center">
+                        <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
+                            style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;">
+                        </div>
+                        <img class="relative w-40"
+                            src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
+                            alt="">
+                    </div>
+                    <div class="relative text-white px-6 pb-6 mt-6">
+                        <span class="block opacity-75 -mb-1">Outdoor</span>
+                        <div class="flex justify-between">
+                            <span class="block font-semibold text-xl">Oak Tree</span>
+                            <span class="mr-2"></span><!-- Adding space -->
+                            <div class="flex items-center">
+                                <div class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">-20% Off</div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="mr-2"></span><!-- Adding space -->
+                                <button class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center" type="button">&#8377;500</button>
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full max-w-xs mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="bg-gray-200 text-center text-lg py-2 font-semibold">
+                    Offer End
+                </div>
+                <div class="flex justify-between px-2 py-4">
+                    <div class="text-center">
+                        <div id="days" class="text-2xl font-semibold">00</div>
+                        <div class="text-xs text-gray-600">Days</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="hours" class="text-2xl font-semibold">00</div>
+                        <div class="text-xs text-gray-600">Hours</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="minutes" class="text-2xl font-semibold">00</div>
+                        <div class="text-xs text-gray-600">Minutes</div>
+                    </div>
+                    <div class="text-center">
+                        <div id="seconds" class="text-2xl font-semibold">00</div>
+                        <div class="text-xs text-gray-600">Seconds</div>
+                    </div>
+                </div>
+            </div>      
+        </div>
+      
+        <div class="populardiv mt-5">
+            <h3 class="text-2xl pl-5 font-semibold">Popular</h3>
+            <div class="populars mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
+                <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
+                    <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                            src="./images/chasma.jpg"
+                            alt="">
+                    </div>
+                    <div class="data py-2 w-full">
+                        <h1 class="leading-none font-semibold">chasma</h1>
+                        <h4 class="leading-none mt-2 text-sm font-semibold opacity-20">chasma product</h4>
+                        <h4 class="mt-3 font-semibold text-zinc-500">₹649</h4>
+                    </div>
+                </div>
+                <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
+                    <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                            src="./images/popularlaptop.jpg"
+                            alt="">
+                    </div>
+                    <div class="data py-2 w-full">
+                        <h1 class="leading-none font-semibold">HP ProBook</h1>
+                        <h4 class="leading-none mt-2 text-sm font-semibold opacity-20">HP ProBook</h4>
+                        <h4 class="mt-3 font-semibold text-zinc-500">₹59,406</h4>
+                    </div>
+                </div>
+                <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
+                    <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
+                        <img class="w-full h-full object-cover"
+                            src="./images/sound.jpg"
+                            alt="">
+                    </div>
+                    <div class="data py-2 w-full">
+                        <h1 class="leading-none font-semibold">Zebronics</h1>
+                        <h4 class="leading-none mt-2 text-sm font-semibold opacity-20">Speaker</h4>
+                        <h4 class="mt-3 font-semibold text-zinc-500">₹10,000</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Electronic mt-6 pb-20">
+            <h3 class="text-2xl pl-5 font-semibold">Shoes</h3>
+            <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                        <img src="./images/shooes.jpg" class="object-cover w-full h-full" alt="Image">
+                    </div>                    
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Nike Air Max 270.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹1499</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
+                        <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                            <img src="./images/shoees2.jpg" class="object-cover w-full h-full" alt="Image">
+                        </div>  
+                    </div>
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Adidas UltraBoost.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹999</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product w-fit rounded-xl p-2 bg-white">
+                    <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
+                        <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
+                            <img src="./images/shoes4.jpg" class="object-cover w-full h-full" alt="Image">
+                        </div>  
+                    </div>
+                    <div class="data w-full px-2 py-5">
+                        <h1 class="font-semibold text-xl leading-none tracking-tight">Nike Shoes.</h1>
+                        <div class="flex justify-between w-full items-center mt-2">
+                            <div class="w-1/2">
+                                <h3 class="font-semibold opacity-20">Product Description.</h3>
+                                <h4 class="font-semibold mt-2">₹1200</h4>
+                            </div>
+                            <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
+                                    class="ri-add-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="footer flex items-center justify-between px-10 fixed bottom-0 left-0 w-full py-5 bg-white">
+            <div class="flex gap-10">
+                <i class="text-xl text-[#69628a] ri-home-2-fill"></i>
+                <i class="text-xl opacity-20 ri-heart-fill"></i>
+            </div>
+            <i
+                class="text-xl absolute shader top-0 left-1/2 -translate-y-1/3 -translate-x-1/2 flex items-center justify-center rounded-full shadow-xl shadow-black/30 w-[4rem] h-[4rem] ri-shopping-bag-fill text-yellow-400"></i>
+            <div class="flex gap-10">
+                <i class="text-xl opacity-20 ri-settings-fill"></i>
+                <i class="text-xl opacity-20 ri-user-fill"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/script.js"></script>
+    <script src="./JS/contdown.js"></script>
+    
+</body>
+
+</html>
