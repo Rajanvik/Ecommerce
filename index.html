@@ -4,13 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>NovaMarket - eCommerce Website</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+    
+    <div class="overlay" data-overlay></div>
+
+    <div class="modal" data-modal>
+
+        <div class="modal-close-overlay" data-modal-overlay></div>
+    
+        <div class="modal-content">
+    
+          <button class="modal-close-btn" data-modal-close>
+            <ion-icon name="close-outline">x</ion-icon>
+          </button>
+    
+          <div class="newsletter-img">
+            <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+          </div>
+    
+          <div class="newsletter">
+    
+            <form id="newsletterForm">
+    
+              <div class="newsletter-header">
+    
+                <h3 class="newsletter-title">Subscribe to Our Updates.</h3>
+    
+                <p class="newsletter-desc">
+                  Stay informed with our latest news, offers, and product releases.
+                </p>
+    
+              </div>
+    
+              <input type="email" name="email" class="email-field" id="email" placeholder="Your Email Address" required>
+    
+              <button type="submit" class="btn-newsletter">Sign Up</button>
+    
+            </form>
+    
+          </div>
+    
+        </div>
+    
+    </div>
+    
+    <!--- NOTIFICATION TOAST-->
+
+    <div class="notification-toast" data-toast>
+
+        <button class="toast-close-btn" data-toast-close>
+            <span>&times;</span>
+        </button>
+
+        <div class="toast-banner">
+        <img src="./assets/images/jewellery-1.jpg" alt="Rose Gold Earrings" width="80" height="70">
+        </div>
+
+        <div class="toast-detail">
+
+        <p class="toast-message">
+            Someone in new just bought
+        </p>
+
+        <p class="toast-title">
+            Rose Gold Earrings
+        </p>
+
+        <p class="toast-meta">
+            <time datetime="PT2M">2 Minutes</time> ago
+        </p>
+
+        </div>
+
+    </div>
+
     <div class="w-full min-h-screen bg-zinc-100 font-['gilroy']">
         <div class="nav flex justify-between items-center px-5 py-5 relative">
             <i class="text-lg ri-menu-2-line"></i>
@@ -54,7 +127,7 @@
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96" id="carouselWrapper">
                 <!-- Navigation buttons -->
-                <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full px-4 z-10">
+                <div class="absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full px-4 z-10" id="navButtons">
                     <button class="text-white rounded-full bg-black bg-opacity-50 p-3 focus:outline-none" id="prevButton">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
@@ -68,29 +141,202 @@
                 </div>
                 <!-- Item 1 -->
                 <div class="duration-700 ease-in-out absolute inset-0" data-carousel-item="active">
-                    <img src="/images/slide1.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                    <img src="./assets/images/slide1.jpg" class="absolute block w-full h-full object-cover" alt="...">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
-                    <img src="./images/slide2.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                    <img src="./assets/images/slide2.jpg" class="absolute block w-full h-full object-cover" alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
-                    <img src="./images/slide3.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                    <img src="./assets/images/slide3.jpg" class="absolute block w-full h-full object-cover" alt="...">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out absolute inset-0" data-carousel-item>
-                    <img src="./images/slide4.jpg" class="absolute block w-full h-full object-cover" alt="...">
+                    <img src="./assets/images/slide4.jpg" class="absolute block w-full h-full object-cover" alt="...">
                 </div>
             </div>
-        </div>            
+        </div>
         
+        <div class="category mt-8 pl-4">
+
+            <div class="container mx-auto">
+          
+              <div class="flex category-item-container overflow-x-auto overflow-y-hidden scroll-snap-type-x-mandatory overscroll-auto gap-x-4">
+          
+                <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                  <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                    <img src="./assets/images/icons/dress.svg" alt="dress & frock" width="30">
+                  </div>
+          
+                  <div class="w-full">
+          
+                    <div class="flex justify-between items-center mb-2">
+                      <h3 class="text-black uppercase text-sm font-semibold">Dress & frock</h3>
+          
+                      <p class="text-gray-500 text-xs">(53)</p>
+                    </div>
+          
+                    <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+          
+                  </div>
+          
+                </div>
+
+                <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/coat.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Winter wear</h3>
+            
+                        <p class="text-gray-500 text-xs">(58)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/glasses.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Glasses & lens</h3>
+            
+                        <p class="text-gray-500 text-xs">(68)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/shorts.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Shorts & jeans</h3>
+            
+                        <p class="text-gray-500 text-xs">(84)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/tee.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">T-shirts</h3>
+            
+                        <p class="text-gray-500 text-xs">(35)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/jacket.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Jacket</h3>
+            
+                        <p class="text-gray-500 text-xs">(16)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/watch.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Watch</h3>
+            
+                        <p class="text-gray-500 text-xs">(27)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+
+                  <div class="flex-shrink-0 w-80 md:w-auto flex items-center gap-4 p-4 border border-gray-200 rounded-md scroll-snap-align-start">
+          
+                    <div class="bg-gray-100 border border-gray-300 p-2 rounded-sm">
+                      <img src="./assets/images/icons/hat.svg" alt="dress & frock" width="30">
+                    </div>
+            
+                    <div class="w-full">
+            
+                      <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-black uppercase text-sm font-semibold">Hat & caps</h3>
+            
+                        <p class="text-gray-500 text-xs">(39)</p>
+                      </div>
+            
+                      <a href="#" class="text-pink-500 text-sm font-medium capitalize">Show all</a>
+            
+                    </div>
+            
+                  </div>
+          
+              </div>
+          
+            </div>
+          
+        </div>
+          
+          
         <div class="Electronic mt-10 pb-5">
             <h3 class="text-2xl pl-5 font-semibold">Best Electronic</h3>
             <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                        <img src="./images/acemera.jpg" class="object-cover w-full h-full" alt="Image">
+                        <img src="./assets/images/acemera.jpg" class="object-cover w-full h-full" alt="Image">
                     </div>                    
                     <div class="data w-full px-2 py-5">
                         <h1 class="font-semibold text-xl leading-none tracking-tight">Mirrorless Cameras.</h1>
@@ -107,7 +353,7 @@
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
                         <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                            <img src="./images/laptop.jpg" class="object-cover w-full h-full" alt="Image">
+                            <img src="./assets/images/laptop.jpg" class="object-cover w-full h-full" alt="Image">
                         </div>  
                     </div>
                     <div class="data w-full px-2 py-5">
@@ -125,7 +371,7 @@
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
                         <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                            <img src="./images/boat.webp" class="object-cover w-full h-full" alt="Image">
+                            <img src="./assets/images/boat.webp" class="object-cover w-full h-full" alt="Image">
                         </div>  
                     </div>
                     <div class="data w-full px-2 py-5">
@@ -151,7 +397,7 @@
             <div class="product__data Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full text-center pl-5">
                 <div class="product__info grid grid-cols-3 gap-2 mb-8">
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/wall docker.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/wall docker.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs"> Wall..</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">JETAL ART</span>
                         <!-- Price and Buy -->
@@ -164,7 +410,7 @@
                     </div>
 
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/keyholder.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/keyholder.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs">Xtenshion</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">Crafts Wooden</span>
                         <!-- Price and Buy -->
@@ -177,7 +423,7 @@
                     </div>
 
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/ryme-small size.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/ryme-small size.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs"> Artificial</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">Plants, Home</span>
                         <!-- Price and Buy -->
@@ -190,7 +436,7 @@
                     </div>
 
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/shirt.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/shirt.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs">Surhi</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">Casual Shirt</span>
                         <!-- Price and Buy -->
@@ -203,7 +449,7 @@
                     </div>
                     
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/motorola.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/motorola.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs">MOTOROLA</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">Sea Green</span>
                         <!-- Price and Buy -->
@@ -216,7 +462,7 @@
                     </div>
 
                     <div class="product__box bg-white rounded-lg p-3">
-                        <img src="./images/kesh king.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
+                        <img src="./assets/images/kesh king.webp" alt="Location" class="product__image w-20 h-20 object-cover justify-self-center rounded-lg">
                         <h3 class="product__title font-semibold text-xs">Kesh</h3>
                         <span class="product__subtitle font-semibold text-xs opacity-20">Shampoo</span>
                         <!-- Price and Buy -->
@@ -236,7 +482,7 @@
             <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                        <img src="./images/saree1.webp" class="object-cover w-full h-full" alt="Image">
+                        <img src="./assets/images/saree1.webp" class="object-cover w-full h-full" alt="Image">
                     </div>  
                     <div class="data w-full px-2 py-5">
                         <h1 class="font-semibold text-xl leading-none tracking-tight">Bnarsi Silk.</h1>
@@ -252,7 +498,7 @@
                 </div>
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                        <img src="./images/saree2.jpg" class="object-cover w-full h-full" alt="Image">
+                        <img src="./assets/images/saree2.jpg" class="object-cover w-full h-full" alt="Image">
                     </div>  
                     <div class="data w-full px-2 py-5">
                         <h1 class="font-semibold text-xl leading-none tracking-tight">Women's Pure Kanjivaram.</h1>
@@ -268,7 +514,7 @@
                 </div>
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                        <img src="./images/saree3.jpg" class="object-cover w-full h-full" alt="Image">
+                        <img src="./assets/images/saree3.jpg" class="object-cover w-full h-full" alt="Image">
                     </div>  
                     <div class="data w-full px-2 py-5">
                         <h1 class="font-semibold text-xl leading-none tracking-tight">lehenga saree.</h1>
@@ -418,7 +664,7 @@
                 <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
                     <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
                         <img class="w-full h-full object-cover"
-                            src="./images/chasma.jpg"
+                            src="./assets/images/chasma.jpg"
                             alt="">
                     </div>
                     <div class="data py-2 w-full">
@@ -430,7 +676,7 @@
                 <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
                     <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
                         <img class="w-full h-full object-cover"
-                            src="./images/popularlaptop.jpg"
+                            src="./assets/images/popularlaptop.jpg"
                             alt="">
                     </div>
                     <div class="data py-2 w-full">
@@ -442,7 +688,7 @@
                 <div class="popular bg-white p-2 rounded-2xl flex items-start gap-3 w-[60%] flex-shrink-0">
                     <div class="w-20 h-20 bg-red-500 flex-shrink-0 rounded-2xl border-4 border-white overflow-hidden">
                         <img class="w-full h-full object-cover"
-                            src="./images/sound.jpg"
+                            src="./assets/images/sound.jpg"
                             alt="">
                     </div>
                     <div class="data py-2 w-full">
@@ -459,7 +705,7 @@
             <div class="Electronic mt-5 flex whitespace-nowrap gap-5 overflow-auto w-full pl-5">
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                        <img src="./images/shooes.jpg" class="object-cover w-full h-full" alt="Image">
+                        <img src="./assets/images/shooes.jpg" class="object-cover w-full h-full" alt="Image">
                     </div>                    
                     <div class="data w-full px-2 py-5">
                         <h1 class="font-semibold text-xl leading-none tracking-tight">Nike Air Max 270.</h1>
@@ -476,7 +722,7 @@
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
                         <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                            <img src="./images/shoees2.jpg" class="object-cover w-full h-full" alt="Image">
+                            <img src="./assets/images/shoees2.jpg" class="object-cover w-full h-full" alt="Image">
                         </div>  
                     </div>
                     <div class="data w-full px-2 py-5">
@@ -494,7 +740,7 @@
                 <div class="product w-fit rounded-xl p-2 bg-white">
                     <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl">
                         <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overflow-hidden">
-                            <img src="./images/shoes4.jpg" class="object-cover w-full h-full" alt="Image">
+                            <img src="./assets/images/shoes4.jpg" class="object-cover w-full h-full" alt="Image">
                         </div>  
                     </div>
                     <div class="data w-full px-2 py-5">
@@ -527,8 +773,10 @@
         </div>
     </div>
 
-    <script src="./JS/script.js"></script>
-    <script src="./JS/contdown.js"></script>
+   
+    <script src="./assets/js/popup.js"></script>
+    <script src="./assets/js/slidechange.js"></script>
+    <script src="./assets/js/coundown.js"></script>
     
 </body>
 
