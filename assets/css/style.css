@@ -60,6 +60,7 @@
 .Electronic::-webkit-scrollbar,
 .categories::-webkit-scrollbar,
 .populars::-webkit-scrollbar,
+.newProduct::-webkit-scrollbar,
 .category-item-container::-webkit-scrollbar {
     display: none;
 }
@@ -406,3 +407,6 @@
     color: hsl(0, 0%, 47%);;
 }
 
+.fill-bg {
+  background-color: #ffcc00; /* Change this to your desired fill color */
+}
